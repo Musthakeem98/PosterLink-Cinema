@@ -6,7 +6,7 @@ export const FooterBase = (): JSX.Element => {
   return (
     <footer className="flex flex-col bg-black">
       <a id="footer" />
-      <div className="flex flex-col items-left bg-black rounded-lg pl-20 p-10 ">
+      <div className="flex flex-col items-left bg-black rounded-lg pl-10 lg:pl-10 p-10 ">
         <h2 className="text-3xl font-semibold text-white leading-[4.25rem]">
           How to reach us
         </h2>

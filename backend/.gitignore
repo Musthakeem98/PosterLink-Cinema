@@ -1,0 +1,7 @@
+# Ignore vendor directory
+/vendor
+
+# Ignore any other sensitive or generated files
+/config.php
+.env
+/node_modules
