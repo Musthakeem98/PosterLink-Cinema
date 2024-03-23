@@ -92,7 +92,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         // Send admin email
         $mail->clearAddresses(); 
-        $mail->addAddress('tempahamed@gmail.com', 'Admin');
+        $mail->addAddress('dumidu.kodithuwakku@ebeyonds.com', 'Admin');
+        $mail->Subject = 'New Form Submission';
+        $mail->Body = "A new form submission has been received.\n\nDetails:\n\nFirst Name: $first_name\nLast Name: $last_name\nEmail: $email\nPhone Number: $phone_number\nMessage: $message\nAgreed to Terms: " . ($agree_terms ? "Yes" : "No");
+        $mail->send();
+        
+        // Send admin email
+        $mail->clearAddresses(); 
+        $mail->addAddress('prabhath.senadheer@ebeyonds.com', 'Admin');
         $mail->Subject = 'New Form Submission';
         $mail->Body = "A new form submission has been received.\n\nDetails:\n\nFirst Name: $first_name\nLast Name: $last_name\nEmail: $email\nPhone Number: $phone_number\nMessage: $message\nAgreed to Terms: " . ($agree_terms ? "Yes" : "No");
         $mail->send();
