@@ -17,7 +17,7 @@ This application is designed to meet specific instructions and design specificat
 git clone git@github.com:Musthakeem98/test-web-app.git
 
 # Navigate to the frontend directory
-cd font-end
+cd test-web-app/font-end/
 
 # Install dependencies
 npm install
