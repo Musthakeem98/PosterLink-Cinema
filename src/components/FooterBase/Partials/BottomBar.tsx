@@ -11,14 +11,20 @@ export default function BottomBar(): JSX.Element {
         <div className="flex items-center lg:items-end justify-center lg:justify-end">
           <p className="text-white pr-4 lg:pr-8">Follow us on</p>
           <div className="flex flex-raw ">
-            <a href="" className="mr-1 lg:mr-5 lg:ml-0 lg:mt-2">
+            <a
+              href="https://twitter.com/ebeyonds"
+              className="mr-1 lg:mr-5 lg:ml-0 lg:mt-2"
+            >
               <img
                 src="/assets/icons/x.svg"
                 alt="Twitter"
                 className="w-6 h-6 fill-current text-white hover:opacity-75 cursor-pointer transition-opacity duration-300"
               />
             </a>
-            <a href="" className="ml-5 lg:ml-0 lg:mt-2">
+            <a
+              href="https://web.facebook.com/eBeyonds"
+              className="ml-5 lg:ml-0 lg:mt-2"
+            >
               <img
                 src="/assets/icons/youtube.svg"
                 alt="YouTube"

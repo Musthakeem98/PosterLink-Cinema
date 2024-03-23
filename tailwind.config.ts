@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         "nev-bar-clr": "rgba(15, 15, 15, 1)",
+        "bnt-clr": "#A52A2A",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

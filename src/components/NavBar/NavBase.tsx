@@ -10,9 +10,9 @@ import { useState } from "react";
 export default function NavBase(): JSX.Element {
   const navigation = [
     { name: "HOME", href: "/" },
-    { name: "OUR SCREENS", href: "/faq" },
-    { name: "SCHEDULE", href: "#pricing" },
-    { name: "MOVIE LIBRARY", href: "#" },
+    { name: "OUR SCREENS", href: "/" },
+    { name: "SCHEDULE", href: "#" },
+    { name: "MOVIE LIBRARY", href: "#movie" },
     { name: "LOCATION & CONTACT", href: "/#footer" },
   ];
 
