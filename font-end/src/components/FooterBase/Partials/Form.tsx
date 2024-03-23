@@ -4,18 +4,20 @@ import { Alert } from "@mui/material";
 import axios from "axios";
 
 export default function Form(): JSX.Element {
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     first_name: "",
     last_name: "",
     email: "",
     phone_number: "",
     message: "",
     agree_terms: false,
-  });
+  };
+  const [formData, setFormData] = useState(initialFormData);
 
   const [alertMessage, setAlertMessage] = useState("");
   const [alertSeverity, setAlertSeverity] = useState("info");
   const [showAlert, setShowAlert] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -30,6 +32,7 @@ export default function Form(): JSX.Element {
   };
 
   const handleSubmit = () => {
+    setIsLoading(true);
     axios
       .post("http://localhost:8000", formData)
       .then((response) => {
@@ -47,10 +50,11 @@ export default function Form(): JSX.Element {
           setShowAlert(true);
           return;
         }
-        // Handle success response here
+        setIsLoading(false);
         setAlertMessage("Form submitted successfully!");
         setAlertSeverity("success");
         setShowAlert(true);
+        setFormData(initialFormData);
       })
       .catch((error) => {
         // Handle error
@@ -58,6 +62,7 @@ export default function Form(): JSX.Element {
         setAlertMessage(
           "There was a problem submitting the form. Please try again later."
         );
+
         setAlertSeverity("error");
         setShowAlert(true);
       });
@@ -169,8 +174,9 @@ export default function Form(): JSX.Element {
         <button
           className="bg-[#CC9601] text-white px-4 py-2 rounded-md w-80 pr-50"
           onClick={handleSubmit}
+          disabled={isLoading}
         >
-          Submit
+          {isLoading ? "Loading..." : "Submit"}
         </button>
       </div>
       {showAlert && (
