@@ -11,7 +11,7 @@ export const FooterBase = (): JSX.Element => {
           How to reach us
         </h2>
         <p className="text-white text-left text-primary-text">
-          Lorem ipsum dolor sit amet, consetetur.
+          The customer is very happy, he will be settled.
         </p>
         <div className=" grid grid-cols-2 gap-20 py-10">
           <div className="col-span-2 lg:col-span-1">

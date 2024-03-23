@@ -15,9 +15,9 @@ export default function Home() {
           MOVIE LIBRARY
         </p>
         <p className="text-base text-white pb-10">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, <br /> sed
-          diam nonumy eirmod tempor invidunt ut labore et <br /> dolore magna
-          aliquyam erat, sed diam voluptua.{" "}
+          The pain itself is very important, the sadipscing elitr <br />
+          but they envy the home of the nonumy as much time as labor <br /> it
+          was a great pain for some, but it was a pleasure.
         </p>
       </div>
       <div className="bg-[#1D1D1D] w-full pt-20">

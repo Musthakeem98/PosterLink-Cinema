@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Alert } from "@mui/material";
+import axios from "axios";
 
 export default function Form(): JSX.Element {
   const [formData, setFormData] = useState({
@@ -29,28 +30,38 @@ export default function Form(): JSX.Element {
   };
 
   const handleSubmit = () => {
-    // Check required fields
-    if (!formData.first_name || !formData.last_name || !formData.email) {
-      setAlertMessage("Please fill in all required fields.");
-      setAlertSeverity("error");
-      setShowAlert(true);
-      return;
-    }
+    axios
+      .post("http://localhost:8000", formData)
+      .then((response) => {
+        console.log("responce :", response);
+        if (response.data.status == "feilds missed") {
+          setAlertMessage("Please fill in all required fields.");
+          setAlertSeverity("error");
+          setShowAlert(true);
+          return;
+        }
 
-    // Check terms agreement
-    if (!formData.agree_terms) {
-      setAlertMessage("Please agree to the Terms & Conditions.");
-      setAlertSeverity("error");
-      setShowAlert(true);
-      return;
-    }
-
-    // All validations passed, show success message
-    setAlertMessage("Form submitted successfully!");
-    setAlertSeverity("success");
-    setShowAlert(true);
+        if (response.data.status == "terms missed") {
+          setAlertMessage("Please agree to the Terms & Conditions.");
+          setAlertSeverity("error");
+          setShowAlert(true);
+          return;
+        }
+        // Handle success response here
+        setAlertMessage("Form submitted successfully!");
+        setAlertSeverity("success");
+        setShowAlert(true);
+      })
+      .catch((error) => {
+        // Handle error
+        console.error("There was a problem with the request:", error);
+        setAlertMessage(
+          "There was a problem submitting the form. Please try again later."
+        );
+        setAlertSeverity("error");
+        setShowAlert(true);
+      });
   };
-
   return (
     <div className="grid grid-cols-2 gap-5">
       <div className=" col-span-2 lg:col-span-1">
@@ -122,7 +133,7 @@ export default function Form(): JSX.Element {
           htmlFor="message"
           className="block text-sm font-medium text-gray-700"
         >
-          Message
+          Message *
         </label>
         <textarea
           id="message"
