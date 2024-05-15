@@ -4,6 +4,9 @@
 
 This application is designed to meet specific instructions and design specifications provided in the Figma design linked below.
 
+## Screen shot of UI
+![Screen](ReadMe_Img/Screenshot.png "Screen")
+
 ### Figma Design URL
 
 [View Figma Design](https://www.figma.com/file/6FDTiXOX7dvEmhk9dCJyym/Test?type=design&node-id=0:1&mode=dev)
